@@ -26,6 +26,8 @@ equipos_continuos = [
     "Routers Wi-Fi",
     "Bocina inteligente",
     "Celular / Smartphone"
+    "Laptop",
+    "Bocina inteligente (Amazon Echo / Echo Dot, Google Nest Mini, Apple HomePod)"
 ]
 
 # ------------------------
@@ -36,7 +38,7 @@ equipos_continuos = [
 potencias_nominales = {
     "Tubo LED T8": 18, "Tubo LED T5": 16, "Foco LED": 10, "Panel LED": 40,
     "Tubo fluorescente T8": 36, "Tubo fluorescente T5": 28, "Fluorescente compacto": 20,
-    "Incandescente": 60, "Halógena": 50, "Computadora de escritorio": 250, "Laptop": 100,
+    "Incandescente": 60, "Halógena": 50, "Computadora de escritorio": 250, "Laptop": 5.2,
     "Refrigerador": 47, "Cafetera": 1000, "Microondas": 1000, "Parrilla o estufa eléctrica": 1500,
     "Horno eléctrico": 1200, "Purificador de aire": 150, "Bomba de agua": 1800,
     "Elevador": 12000, "Escaleras eléctricas": 10000, "Compresor": 4000,
@@ -1188,7 +1190,7 @@ if st.session_state["mostrar_tabla"]:
         # ✅ Agregar fila final del total
         total_row = pd.DataFrame({
             "Servicio": ["TOTAL"],
-            "Equipo": [""],
+            "Equipos": [""],
             "Consumo (kWh/mes)": [round(total, 2)],
             "% del consumo": [100.00]
         })
@@ -1267,3 +1269,4 @@ with st.sidebar:
         unsafe_allow_html=True
 
     )
+
