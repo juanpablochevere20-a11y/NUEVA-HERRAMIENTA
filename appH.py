@@ -25,7 +25,7 @@ equipos_continuos = [
     "Servidores",
     "Routers Wi-Fi",
     "Bocina inteligente",
-    "Celular / Smartphone"
+    "Celular / Smartphone",
     "Laptop",
     "Bocina inteligente (Amazon Echo / Echo Dot, Google Nest Mini, Apple HomePod)"
 ]
@@ -1269,4 +1269,5 @@ with st.sidebar:
         unsafe_allow_html=True
 
     )
+
 
