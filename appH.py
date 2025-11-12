@@ -957,7 +957,7 @@ with tab_residencial:
     st.markdown("Selecciona los equipos y servicios residenciales que quieras calcular.")
 
     # Lista de subusos residenciales (combinamos categorías relevantes)
-    usos_residenciales = ["Iluminación", "Acondicionamiento de aire residencial", "Electrodomésticos residenciales", "Equipos de cómputo", "Entretenimiento", "Telecomunicaciónes", "Equipos sanitarios", "Otros"]
+    usos_residenciales = ["Iluminación", "Acondicionamiento de aire residencial", "Electrodomésticos residenciales", "Equipos de cómputo", "Entretenimiento", "Equipos de ejercicio y recreativos","Telecomunicaciónes", "Equipos sanitarios", "Otros"]
     usos_sel_res = st.multiselect("Selecciona los usos residenciales:", usos_residenciales, key="res_usos")
 
     for uso in usos_sel_res:
@@ -1269,6 +1269,7 @@ with st.sidebar:
         unsafe_allow_html=True
 
     )
+
 
 
 
