@@ -1089,28 +1089,7 @@ with tab_residencial:
         st.warning("⚠️ *Te recomendamos moderar tu consumo de energía eléctrica* ya que estás **peligrosamente cerca** de cambiar a Tarifa DAC.")
     else:
         st.success("✅ Tu consumo está dentro del rango seguro para tu tarifa.")
-# ------------------------
-# Botón general para limpiar todos los datos
-# ------------------------
-#if st.button("🗑️ Limpiar todos los datos"):
-    # 1️⃣ Limpiar todos los usos seleccionados
-#    for key in list(st.session_state.keys()):
-#        if "usos" in key:
-#            if isinstance(st.session_state[key], list):
-#                st.session_state[key] = [] 
-#            else:
-#                del st.session_state[key]
-
-        # 2️⃣ Limpiar checkboxes de equipos/subusos
-#        if key.startswith(("of_", "res_", "fu_", "otr_", "sit_", "ele_", "air_")):
-#            del st.session_state[key]
-
-    # 3️⃣ Limpiar listas globales
-#    st.session_state["subusos_seleccionados"] = []
-#    st.session_state["sankey_data"] = []
-
-    # 4️⃣ Forzar refresco total de la interfaz
-#    st.rerun()
+        
 # ------------------------
 # Pestaña Consejos (dinámica)
 # ------------------------
@@ -1197,8 +1176,8 @@ if st.session_state["mostrar_tabla"]:
     else:
         df_sankey = pd.DataFrame(sankey_data)
         df_tabla = df_sankey.rename(columns={
-            "uso": "Uso",
-            "subuso": "Subuso",
+            "uso": "Servicio",
+            "subuso": "Equipos",
             "valor": "Consumo (kWh/mes)"
         })
 
@@ -1208,8 +1187,8 @@ if st.session_state["mostrar_tabla"]:
 
         # ✅ Agregar fila final del total
         total_row = pd.DataFrame({
-            "Uso": ["TOTAL"],
-            "Subuso": [""],
+            "Servicio": ["TOTAL"],
+            "Equipo": [""],
             "Consumo (kWh/mes)": [round(total, 2)],
             "% del consumo": [100.00]
         })
@@ -1286,4 +1265,5 @@ with st.sidebar:
         f'<img src="{MANUALCONSEJOS}" alt="CONUEE" style="width:100%;">'
         '</a>',
         unsafe_allow_html=True
+
     )
